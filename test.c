@@ -332,13 +332,106 @@
 //	return 0;
 //}
 
-int main()
-{
-	char str1[] = "hello";
-	char str2[] = "hello";
-	char* str3 = "hello";
-	char* str4 = "hello";
-	//str1 != str2
-	//str3 == str4
-	return 0;
-}
+//int main()
+//{
+//	char str1[] = "hello";
+//	char str2[] = "hello";
+//	char* str3 = "hello";
+//	char* str4 = "hello";
+//	//str1 != str2
+//	//str3 == str4
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a[5] = {5,4,3,2,1};
+//	int* ptr = (int*)(&a + 1);
+//	printf("%d,%d", *(a + 1), *(ptr - 1));
+//	// 4  1
+//}
+
+////旋转字符串
+////ABCD左旋一个字符得到BCDA
+////ABCD左旋两个字符得到CDAB
+//#include <assert.h>
+////暴力求解法
+//void left_move(char* arr, int k)
+//{
+//	assert(arr!=NULL);
+//	int i = 0;
+//	int len = strlen(arr);
+//	for (i = 0; i < k; i++)
+//	{
+//		char tmp = *arr;
+//		int j = 0;
+//		for (j = 0; j < len - 1; j++)
+//		{
+//			*(arr + j) = *(arr + j + 1);
+//		}
+//		*(arr + len - 1) = tmp;
+//	}
+//}
+//void reverse(char* left, char* right)
+//{
+//	assert(left != NULL);
+//	assert(right != NULL);
+//	while (left<right)
+//	{
+//		char tmp = *left;
+//		*left = *right;
+//		*right = tmp;
+//		left++;
+//		right--;
+//	}
+//}
+//
+//void left_move2(char* arr, int k)
+//{
+//	assert(arr);
+//	int len = strlen(arr);
+//	assert(k <= len);
+//	reverse(arr,arr+k-1);//逆序左边
+//	reverse(arr+k,arr+len-1);//逆序右边
+//	reverse(arr,arr+len-1);//逆序整体
+//}
+//
+////三步翻转法
+////ab cdef
+////ba fedc
+////cdefab
+//int main()
+//{
+//	char arr[] = "abcdef";
+//	//left_move(arr, 2);
+//	left_move2(arr, 2);
+//	printf("%s\n", arr);
+//	return 0;
+//}
+
+//判断一个字符串是否是由另一个字符串旋转得来
+//int is_left_move(char* s1, char* s2)
+//{
+//	int len = strlen(s1);
+//	int i = 0;
+//	for (i = 0; i < len; i++)
+//	{
+//		left_move(s1, 1);
+//		int ret = strcmp(s1, s2);
+//		if (ret == 0)
+//			return 1;
+//	}
+//	return 0;
+//}
+//
+//int main()
+//{
+//	char arr1[] = "abcdef";
+//	char arr2[] = "efabcd";
+//	int ret = is_left_move(arr1, arr2);
+//	if (ret == 1)
+//		printf("Yes\n");
+//	else
+//		printf("No\n");
+//	return 0;
+//}
